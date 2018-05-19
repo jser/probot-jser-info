@@ -94,8 +94,8 @@ const renamePattern = (originalFilePath, content) => {
 };
 
 module.exports = robot => {
+    // Rename: post file name from post title
     robot.on("push", async context => {
-        const linterItems = {};
         const push = context.payload;
         const compare = await context.github.repos.compareCommits(
             context.repo({
@@ -103,10 +103,8 @@ module.exports = robot => {
                 head: push.after
             })
         );
-
         const branch = push.ref.replace("refs/heads/", "");
         const repoInfo = context.repo();
-
         const promises = compare.data.files
             .filter(file => {
                 return file.status === "added" || file.status === "modified";
@@ -116,7 +114,6 @@ module.exports = robot => {
                 return canRename(originalFileName);
             })
             .map(file => {
-                const originalFileName = file.filename;
                 return renameCommit(context, {
                     owner: repoInfo.owner,
                     repo: repoInfo.repo,
