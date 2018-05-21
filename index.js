@@ -83,7 +83,12 @@ const renamePattern = (originalFilePath, content) => {
         return originalFilePath;
     }
     const [_, year, month, day, keyword] = content.match(titlePattern);
-    const newSlug = slug(keyword.trim(), {
+    const trimmedKeyword = keyword.trim();
+    // Title is empty
+    if (trimmedKeyword.length === 0) {
+        return originalFilePath;
+    }
+    const newSlug = slug(trimmedKeyword, {
         remove: null,
         lower: true
     });
