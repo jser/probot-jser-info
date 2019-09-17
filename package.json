@@ -1,47 +1,53 @@
 {
   "name": "probot-jser-info",
   "version": "1.0.0",
-  "description": "",
-  "author": "azu <azuciao@gmail.com> (https://jser.info)",
+  "description": "A Probot app",
+  "author": "azu <azuciao@gmail.com> (https://github.com/jser/probot-jser-info)",
   "license": "ISC",
-  "repository": "https://github.com/jser/probot-jser-info.git",
+  "repository": "https://github.com//probot-jser-info.git",
+  "homepage": "https://github.com//probot-jser-info",
+  "bugs": "https://github.com//probot-jser-info/issues",
+  "keywords": [
+    "probot",
+    "github",
+    "probot-app"
+  ],
   "scripts": {
-    "start-probot": "probot run ./index.js",
-    "start": "PRIVATE_KEY=$(echo $PRIVATE_KEY | base64 -d) npm run start-probot",
-    "dev": "nodemon --exec \"dotenv -e .env npm run start-probot\"",
-    "test": "jest",
-    "test:watch": "jest --watch --notify --notifyMode=change --coverage",
-    "prettier": "prettier --write \"**/*.{js,jsx,ts,tsx,css}\"",
-    "precommit": "lint-staged",
-    "postcommit": "git reset"
+    "dev": "nodemon",
+    "start": "probot run ./index.js",
+    "lint": "standard --fix",
+    "test": "jest && standard",
+    "test:watch": "jest --watch --notify --notifyMode=change --coverage"
   },
   "dependencies": {
-    "probot": "^6.0.0",
-    "slug": "^0.9.1"
+    "probot": "^7.2.0",
+    "slug": "^1.1.0"
   },
   "devDependencies": {
-    "dotenv-cli": "^1.4.0",
-    "husky": "^0.14.3",
-    "jest": "^22.4.3",
-    "lint-staged": "^7.1.0",
+    "dotenv-cli": "^2.0.1",
+    "jest": "^24.0.0",
+    "nock": "^10.0.0",
     "nodemon": "^1.17.2",
-    "now": "^11.1.12",
-    "prettier": "^1.12.1",
-    "smee-client": "^1.0.1"
+    "smee-client": "^1.0.2",
+    "standard": "^12.0.1"
   },
   "engines": {
     "node": ">= 8.3.0"
   },
-  "prettier": {
-    "singleQuote": false,
-    "printWidth": 120,
-    "tabWidth": 4
-  },
-  "lint-staged": {
-    "*.{js,jsx,ts,tsx,css}": [
-      "prettier --write",
-      "git add"
+  "standard": {
+    "env": [
+      "jest"
     ]
+  },
+  "nodemonConfig": {
+    "exec": "npm start",
+    "watch": [
+      ".env",
+      "."
+    ]
+  },
+  "jest": {
+    "testEnvironment": "node"
   },
   "now": {
     "alias": "probot-jser-info",

@@ -24,3 +24,13 @@ npm start
 - <https://probot-jser-info.now.sh/>
 - <https://github.com/azu/probot-jser-test-repo>
 - <https://github.com/settings/apps/probot-for-jser-info-dev>
+
+## Contributing
+
+If you have suggestions for how probot-jser-info could be improved, or want to report a bug, open an issue! We'd love all and any contributions.
+
+For more, check out the [Contributing Guide](CONTRIBUTING.md).
+
+## License
+
+[ISC](LICENSE) © 2019 azu <azuciao@gmail.com> (https://github.com/jser/probot-jser-info)
