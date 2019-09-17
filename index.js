@@ -64,7 +64,7 @@ const renameCommit = async (robot, { ref, owner, repo, branch, originalFileName,
     };
 };
 
-const RENAME_TARGET = /(_i18n\/ja\/_posts\/\d+)\/(.*?.md)/;
+const RENAME_TARGET = /(_i18n\/ja\/_posts\/\d+)\/(.*?\.md$)/;
 const canRename = originalFilePath => {
     return RENAME_TARGET.test(originalFilePath);
 };
