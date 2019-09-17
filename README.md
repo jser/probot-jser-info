@@ -17,7 +17,10 @@ npm start
 
 ## Deploy
 
-    ./deploy.sh
+    now
+    # now secrets add webhook-secret
+    # now secrets add private-key
+    # now secrets add app-id
 
 ## Test
 
