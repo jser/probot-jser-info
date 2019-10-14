@@ -17,10 +17,11 @@ npm start
 
 ## Deploy
 
-    now
-    # now secrets add webhook-secret
-    # now secrets add private-key
-    # now secrets add app-id
+    now --public
+    now alias
+    # now secrets add probot-jser-info-webhook-secret
+    # now secrets add probot-jser-info-private-key
+    # now secrets add probot-jser-info-app-id
 
 ## Test
 
