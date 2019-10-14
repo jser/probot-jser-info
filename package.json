@@ -21,7 +21,7 @@
     "deploy": "now"
   },
   "dependencies": {
-    "probot": "^7.2.0",
+    "probot": "^9.5.3",
     "slug": "^1.1.0"
   },
   "devDependencies": {
