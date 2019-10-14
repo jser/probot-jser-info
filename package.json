@@ -20,6 +20,7 @@
     "test:watch": "jest --watch --notify --notifyMode=change --coverage"
   },
   "dependencies": {
+    "now": "^16.3.1",
     "probot": "^7.2.0",
     "slug": "^1.1.0"
   },
@@ -52,10 +53,10 @@
   "now": {
     "alias": "probot-jser-info",
     "env": {
-      "APP_ID": "@app-id",
+      "APP_ID": "@probot-jser-info-app-id",
       "NODE_ENV": "production",
-      "PRIVATE_KEY": "@private-key",
-      "WEBHOOK_SECRET": "@webhook-secret"
+      "PRIVATE_KEY": "@probot-jser-info-private-key",
+      "WEBHOOK_SECRET": "@probot-jser-info-webhook-secret"
     }
   }
 }
