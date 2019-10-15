@@ -25,7 +25,7 @@ const renameCommit = async (robot, { ref, owner, repo, branch, originalFileName,
   const octokit = robot.github;
   // get content
   // http://octokit.github.io/rest.js/#api-Repos-getContent
-  const { data: getContentResponse } = await octokit.repos.getContent({
+  const { data: getContentResponse } = await octokit.repos.getContents({
     owner,
     repo,
     path: originalFileName,
